@@ -1,38 +1,525 @@
-.App {
+/* * {
+    border: 1px solid blueviolet;
+} */
+
+body {
+  height: 2000px;
+}
+.header {
+  width: 100%;
+  height: 77px;
+  background: #ffffff;
+  border-bottom: 1px solid #DBDBDB; 
+  position: fixed;
+  top:0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+nav {
+  width: 100%;
+  height: 26px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container {
+  width: 300px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.searchBox {
+  align-items: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.searchBox input {
+  width: 215px;
+  height: 28px;
+  border: 1px solid #DBDBDB;
+  border-radius: 3px;
+  background: #FAFAFA;
+  outline: none;
+}
+
+.searchBox input::placeholder {
   text-align: center;
+  color: #DBDBDB;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #DBDBDB;
+  border-radius: 50%;
+  position: absolute;
+  left: 70px;
+  bottom: 10px;
+  transform: rotateZ(-45deg);
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search::after {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 5px;
+  background: #DBDBDB;
+  position: absolute;
+  left: calc(100% - 5px);
+  border-radius: 10px;
+  top: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navIcon {
+  width:300px;
+  height: 28px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.container .logo{
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+}
+
+.container .textlogo {
+  width: 107px;
+  height: 33px;
+  padding-top: 5px;
+  padding-left: 10px;
+  border-left: 1px solid gray;
+}
+
+.navIcon img {
+  width: 28px;
+  height: 28px;
+  margin-right: 24px;
+}
+
+.searchBox {
+  width: 215px;
+  height: 28px;
+}
+
+/* 여기부터 메인 title 페이지 */
+
+.feedsPage { 
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.feeds {
+  width: 600px;
+  height: auto;
+  margin-top: 50px;
+}
+
+.feed { 
+  border: 1px solid #DBDBDB;
+  margin-top: 50px;
+}
+
+.feeds .title {
+  height: 60px;
+  background-color: #ffffff;
+  border-bottom: none;
+}
+
+.title {
+  padding: 10px;
+  position: relative;
+}
+
+.title div {
+  width: 95px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+}
+
+.title .more {
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  margin-top: 3px;
+}
+
+.profileImg {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+/* 여기부터 메인 feeds 페이지 */
+.mainboard {
+  background-color: #ffffff;
+}
+
+.mainImg {
+  width: 600px;
+}
+
+.iconBorad {
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  width: 140px;
+}
+
+.rigth {
+  width: 60px;
+}
+
+.iconBorad img {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+.iconBorad img:first-child {
+  margin-left: 5px;
+}
+
+.likes {
+  margin-left: 5px;
+  display: flex;
+  font-size: 12px;
+  background-color:#ffffff;
+}
+
+.likes p {
+  text-align: center;
+  margin-top: 3px;
+}
+
+.likes a {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.likes img {
+  width: 20px;
+  border-radius: 50%;
+  margin: 2px 6px 0 0;
+}
+
+/* 댓글창 */
+
+.commentBox {
+  background-color:#ffffff;
+}
+
+.commentBox .comment {
+  height: auto;
+  margin: 5px 0 0 6px;
+  display: block;
+  background-color:#ffffff;
+}
+
+.comment p {
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 5px;
+  background-color:#ffffff;
+}
+
+.commentBox span{
+  font-weight: normal;
+  margin-left: 5px;
+  font-size: 14px;
+  background-color:#ffffff;
+}
+
+.comment .gray {
+  color: #DBDBDB;
+  font-size: 14px;
+}
+
+.commentBox .time {
+  height: auto;
+  font-size: 10px;
+  color: #DBDBDB;
+  margin: 3px 0 8px 6px;
+}
+
+.time span {
+  font-size: 12px;
+}
+
+.commentBox a {
+  color: #000;
+}
+
+.commentArea form {
+  width: 600px;
+  height: 56px;
+  border-top: 1px solid #DBDBDB;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.commentArea input {
+  width: 500px;
+  height: 20px;
+  border: none;
+  resize: none;
+  overflow: hidden;
+  outline: none;
+}
+
+.commentArea input::placeholder {
+  color: #DBDBDB;
+}
+
+.commentArea button {
+  background: none;
+  opacity: .5;
+  border: none;
+  margin-right: 10px;
+}
+
+.commentArea a {
+  color: #74b9ff;
+  font-size: 14px;
+}
+
+.js-p {
+  position: relative;
+}
+
+.js-p .del {
+  position: absolute;
+  right: 15px;
+}
+
+/* 여기서부터 오른쪽 페이지 */
+
+.mainRight {
+  width: 292px;
+  height: auto;
+  margin-top: 100px;
+  margin-left: 25px;
+}
+
+.itMe {
+  width: 292px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+}
+
+.itMe img {
+  border-radius: 50%;
+  border: none;
+  width: 50px;
+  height: 50px;
+  margin: 0 2px;
+}
+
+.name {
+  margin-left: 10px;
+}
+
+.name a {
+  color: #000;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.name .nick {
+  font-size: 12px;
+  color: #DBDBDB;
+}
+
+.story {
+  height: 222px;
+  margin-top: 10px;
+  background: #ffffff;
+  border: 1px solid #DBDBDB;
+}
+
+.story1 {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.story1 span {
+  font-size: 14px;
+  color: #DBDBDB;
+  margin-left: 10px;
+  font-weight: 700;
+}
+
+.story1 a {
+  font-size: 12px;
+  color: #000;
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.people button {
+  width: 200px;
+  border: none;
+  padding: 10px;
+  background: none;
+}
+
+.people {
+  height: 182px;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.people1, .people2, .people3, .people4, .people5 {
+  display: flex;
+  margin-left: 2px;
+}
+
+button div {
+  margin-left: 10px;
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-start;
+  outline: none;
+}
+
+button p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+button .small {
+  font-size: 10px;
+  font-weight: normal;
+  color: #DBDBDB;
+  margin-top: 3px;
+  text-align: left;
+}
+
+.people img {
+  border-radius: 50%;
+  border: none;
+  width: 34px;
+  height: 34px;
+}
+
+.everyone {
+  border: 1px solid #DBDBDB;
+  background: #ffffff;
+  height: 196px;
+  margin-top: 10px;
+}
+
+.recom {
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 5px 0 10px 10px;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.recom img {
+  border-radius: 50%;
+  border: none;
+  width: 34px;
+  height: 34px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.recom div {
+  margin-left: 10px;
+}
+.recom a {
+  font-size: 14px;
+  color: #000;
+  font-weight: 600;
+}
+.recom .small {
+  font-size: 10px;
+  color: #DBDBDB;
+  margin-top: 3px;
+}
+.recom button {
+  position: absolute;
+  right: 15px;
+  border: none;
+  background: none;
+  font-size: 12px;
+  color: #0984e3;
+  font-weight: 900;
+}
+
+.info {
+  margin: 10px 0 0 5px;
+  font-size: 11px;
+  line-height: 18px;
+  color: #DBDBDB;
+}
+
+
+
+.RightProfile {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.Box {
+  display: flex;
+}
+
+.ProfilePhoto {
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.ProfileBox {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.RightName {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.RightText {
+  font-size: 10px;
+  color: #DBDBDB;
+  margin-top: 3px;
+  font-weight: normal;
+}
+
+.Follow {
+  margin-right: 10px;
+  background: none;
+  border: none;
+  color: #0984e3;
+  font-weight: 600;
 }
