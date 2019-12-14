@@ -313,6 +313,10 @@ nav {
   right: 15px;
 }
 
+/* .js-p .del2{
+  display: none;
+} */
+
 /* 여기서부터 오른쪽 페이지 */
 
 .mainRight {
@@ -485,22 +489,42 @@ button .small {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
+  margin-left: 6px;
 }
 .Box {
   display: flex;
+  /* margin-right: 20px; */
+}
+/* 여기 조심그라데이션 시작 */
+.Box .Photo {
+  background: 
+   linear-gradient(#ccc,#ccc) padding-box, /*this is your grey background*/
+   linear-gradient(to right, #9c20aa, #fb3570) border-box;
+  color: #313149;
+  border: 2px solid transparent;
+  border-radius:50%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
 }
 
-.ProfilePhoto {
+/* 여기까지 도전 */
+.Box .ProfilePhoto {
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   margin-right: 10px;
   margin-left: 10px;
+
+  border: 2px solid white;
 }
 
 .ProfileBox {
   display: flex;
   flex-direction: column;
+  margin-left: 10px;
   /* justify-content: space-between; */
 }
 
