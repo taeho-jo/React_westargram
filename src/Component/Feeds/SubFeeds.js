@@ -10,17 +10,25 @@ class SubFeeds extends React.Component {
     e.target.title.value = '';
   }
 
+  
+
   render() {
     let date = this.props.date
     let lists = [];
-    for(let i =0; i < date.length; i++) {
-      lists.push(
-        <p key={date[i].id} className="js-p"><a herf={date[i].id}>{date[i].who}</a><span className="js-span"> 
-        {date[i].content}</span><button value='X' className='del'>{date[i].cancel}</button> </p>
-        
-        )}
 
-   return (
+  //  console.log(date)
+    for(let i = 0; i < date.length; i++) {
+      lists.push(
+        <p key={date[i].id} className="js-p"><a herf={date[i].id}>{date[i].who}</a><span className="js-span"> {date[i].content}</span>
+          <button 
+            value= {date[i].id} 
+            className='del'
+            onClick={(id, e) => this.props.handleDelete(id, e)}>
+              {date[i].cancel}</button> </p>
+        )
+      }
+  
+    return (
       <article className="feed">
         <div className="title">
           <div>
@@ -53,6 +61,7 @@ class SubFeeds extends React.Component {
           </div>
 
           <div className="comment">
+            <p className="js-p"><a herf='#'>IamJotang</a><span className="js-span"> 항상행복하세요</span> <span className="gray"> . . . 더보기</span></p>
             {lists}
           </div>
         
@@ -81,3 +90,17 @@ export default SubFeeds;
 // <p key={date[i].id} className="js-p"><a herf={date[i].id}>{date[i].who}</a><span className="js-span"> 
 //             {date[i].content}</span>
 //             <button className='del'>{date[i].cancel}</button> </p>
+
+
+// lists.push(
+//   <p 
+//     key={date[i].id} 
+//     className="js-p"><a herf={date[i].id}>{date[i].who}</a>
+//     <span className="js-span"> {date[i].content}</span>
+//     <button 
+//       value='X' 
+//       className='del'
+//       onClick={this.props.handleDelete}
+//       >{date[i].cancel}</button> </p>
+  
+//   )}

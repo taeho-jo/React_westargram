@@ -5,25 +5,53 @@ import SubFeeds from './SubFeeds'
 class SubFeedPage extends React.Component {
   constructor(props) {
     super(props)
-    this.max_Comment_id = 2;
+    this.max_Comment_id = 1;
+    this.key = 1;
     this.state = {
       Comment: [
         {id:0, who:'jotang' , content:'너무 맛있어보여요ㅠㅠ', cancel: ''},
-        {id:1, who:'mino_maru' , content:'혼자만 먹는겁니까 지금', cancel: ''},
-        {id:2, who:'__torytoll' , content:'너무하시네요...혼자먹고', cancel: ''}
+        {id:1, who:'mino_maru' , content:'혼자만 먹는겁니까 지금', cancel: ''}
       ],
       Comment1: [
-        {id:1, who:'yeon.90' , content:'다음에 또 만들어주세요', cancel: ''},
-        {id:2, who:'what._sub' , content:'(끄적끄적)메모...', cancel: ''},
-        {id:3, who:'eunji_0116' , content:'하쿠나 마타타~~', cancel: ''}
+        {id:0, who:'yeon.90' , content:'다음에 또 만들어주세요', cancel: ''},
+        {id:1, who:'what._sub' , content:'(끄적끄적)메모...', cancel: ''}
       ],
       Comment2: [
-        {id:1, who:'do_haeng_' , content:'차가 멋지네요!!', cancel: ''},
-        {id:2, who:'minji671' , content:'flex 하셨네요', cancel: ''},
-        {id:3, who:'santa_hello' , content:'크리스마스 선물해줘요', cancel: ''}
-      ]  
+        {id:0, who:'do_haeng_' , content:'차가 멋지네요!!', cancel: ''},
+        {id:1, who:'minji671' , content:'flex 하셨네요', cancel: ''}
+      ]
+      }
     }
-  }
+
+    // handleDelete = (e) => {
+    //   // const b = this.max_Comment_id--
+    //   const { Comment } = this.state;
+    //   console.log(Comment)
+    //   // console.log(e.target.value)
+    //   // this.setState({
+    //   //   Comment: Comment.filter(info => info.id !== e.target.button.value)
+    //   // })
+    //   // console.log(this.max_Comment_id)
+    //   // console.log(Comment)
+      
+    // }
+
+      
+    handleDelete = ( e) => {
+      const { Comment } = this.state;
+      console.log(Comment)
+      const newArr = Array.from(Comment)
+      
+      this.setState({
+        newArr: newArr.filter(a => a.id!== e.target.value)
+      })
+      console.log('this is', e.target.value)
+      console.log('that is', )
+      
+      // console.log(newArr)
+      // console.log('this is')
+    }
+    
 
   render() {
     return (
@@ -38,12 +66,14 @@ class SubFeedPage extends React.Component {
           date={this.state.Comment}
           onSubmit={(name) => {
             this.max_Comment_id = this.max_Comment_id + 1;
+            this.key = this.key + 1
             let Comments = this.state.Comment.concat(
-              {id: this.max_Comment_id, who: 'wecode_bootcamp', content: name, cancel: 'X'})
+              {key: this.key ,id: this.max_Comment_id, who: 'wecode_bootcamp', content: name, cancel: 'X'})
             // this.state.Comment.push(
             //   {id: this.max_Comment_id, who: 'jotang', content: name})
             this.setState({Comment: Comments})  //this.state.Comment
-            }} 
+            }}
+           handleDelete = {this.handleDelete} 
           />
 
           
@@ -82,7 +112,6 @@ class SubFeedPage extends React.Component {
             this.setState({Comment2: Comments2})  //this.state.Comment
             }}
             /> 
-      
       </div>
     );
   }
@@ -103,3 +132,13 @@ export default SubFeedPage;
 //   //   {id: this.max_Comment_id, who: 'jotang', content: name})
 //   this.setState({Comment: Comments})  //this.state.Comment
 //   }}
+
+// onClick={() => {
+//   const newArr = Array.from(this.state.Comment)
+//   console.log(this.state.Comment)
+//   console.log(newArr[0].id)
+//   if(newArr.id === this.state.Comment.id) {
+//     newArr.splice(newArr.id, 1)
+//     // console.log(newArr.splice(newArr.id, 1))
+//   }
+// }} 
