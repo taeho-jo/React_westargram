@@ -311,6 +311,10 @@ nav {
 .js-p .del {
   position: absolute;
   right: 15px;
+  background: none;
+  font-weight: 900;
+  color: red;
+  border: none;
 }
 
 /* .js-p .del2{

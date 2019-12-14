@@ -1,22 +1,26 @@
 import React from 'react'
-import Comment from './Comment'
+
 
 class SubFeeds extends React.Component {
-  constructor(props) {
-    super(props)
-    this.max_Comment_id = 3;
-    this.state = {
-      Comment: [
-        {id:1, who:'jotang' , content:'너무 맛있어보여요ㅠㅠ', cancel: ''},
-        {id:2, who:'mino_maru' , content:'혼자만 먹는겁니까 지금', cancel: ''},
-        {id:3, who:'__torytoll' , content:'너무하시네요...혼자먹고', cancel: ''}
-      ]  
-    }
-  }
   
+  addComment = (e) => {
+    e.preventDefault();
+    this.props.onSubmit(e.target.title.value);
+    // console.log(e.target.title.value)
+    e.target.title.value = '';
+  }
 
   render() {
-    return (
+    let date = this.props.date
+    let lists = [];
+    for(let i =0; i < date.length; i++) {
+      lists.push(
+        <p key={date[i].id} className="js-p"><a herf={date[i].id}>{date[i].who}</a><span className="js-span"> 
+        {date[i].content}</span><button value='X' className='del'>{date[i].cancel}</button> </p>
+        
+        )}
+
+   return (
       <article className="feed">
         <div className="title">
           <div>
@@ -42,17 +46,30 @@ class SubFeeds extends React.Component {
           </div>
         </div>
 
-        <Comment 
-          date={this.state.Comment} 
-          onSubmit={(name) => {
-            this.max_Comment_id = this.max_Comment_id + 1;
-            let Comments = this.state.Comment.concat(
-              {id: this.max_Comment_id, who: 'wecode_bootcamp', content: name, cancel: 'X'})
-            // this.state.Comment.push(
-            //   {id: this.max_Comment_id, who: 'jotang', content: name})
-            this.setState({Comment: Comments})  //this.state.Comment
-            }}
-            />
+        <div className="commentBox">
+          <div className="likes">
+            <img src={this.props.otherPhoto} alt="사진" />
+            <p><span className="id"><a href="#">{this.props.otherUser}</a></span>님 외 <span className="id"><a href="#">{this.props.num}명</a></span>이 좋아합니다</p>
+          </div>
+
+          <div className="comment">
+            {lists}
+          </div>
+        
+          <div className="time">
+            <span>48분 전</span>
+          </div>
+      
+          <section className='commentArea'>
+            <form className="btnBox addComment" action='/creat_process' method='post'
+              onSubmit={this.addComment}>
+
+              <input autoComplete="off" className="peopleSay" name='title' placeholder="댓글 달기..."/>
+              <button type="submit" className="Btn">게시</button>
+
+            </form>
+          </section>
+        </div>
       </article>
     );
   }
@@ -60,3 +77,7 @@ class SubFeeds extends React.Component {
 
 
 export default SubFeeds;
+
+// <p key={date[i].id} className="js-p"><a herf={date[i].id}>{date[i].who}</a><span className="js-span"> 
+//             {date[i].content}</span>
+//             <button className='del'>{date[i].cancel}</button> </p>
