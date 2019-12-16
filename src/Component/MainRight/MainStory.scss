@@ -1,0 +1,24 @@
+.story {
+  height: 222px;
+  margin-top: 10px;
+  background: #ffffff;
+  border: 1px solid #DBDBDB;
+  .story1 {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+      font-size: 14px;
+      color: #DBDBDB;
+      margin-left: 10px;
+      font-weight: 700;
+    }
+    a {
+      font-size: 12px;
+      color: #000;
+      margin-right: 10px;
+      font-weight: 600;
+    }
+  }
+}

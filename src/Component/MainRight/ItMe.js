@@ -1,4 +1,5 @@
 import React from 'react'
+import './ItMe.scss'
 
 
 function ItMe() {
@@ -8,7 +9,7 @@ function ItMe() {
       <div className="name">
         <p><a href="#">wecode_bootcamp</a></p>
         <p className="nick">WeCode | 위코드</p>
-    </div>
+      </div>
     </div>
 
   );

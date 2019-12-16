@@ -1,5 +1,6 @@
 import React from 'react';
 import People from './People';
+import './MainStory.scss'
 
 
 function MainStory() {

@@ -1,4 +1,5 @@
 import React from 'react'
+import './SubFeeds.scss'
 
 
 class SubFeeds extends React.Component {
@@ -23,7 +24,7 @@ class SubFeeds extends React.Component {
           <button 
             value= {date[i].id} 
             className='del'
-            onClick={(id, e) => this.props.handleDelete(id, e)}>
+            onClick={(e) => this.props.handleDelete(e)}>
               {date[i].cancel}</button> </p>
         )
       }
@@ -104,3 +105,21 @@ export default SubFeeds;
 //       >{date[i].cancel}</button> </p>
   
 //   )}
+
+
+
+  // let date = this.props.date
+    // let lists = [];
+
+  //  console.log(date)
+    // for(let i = 0; i < date.length; i++) {
+    //   lists.push(
+    //     <p key={date[i].id} className="js-p"><a herf={date[i].id}>{date[i].who}</a><span className="js-span"> {date[i].content}</span>
+    //       <button 
+    //         value= {date[i].id} 
+    //         className='del'
+    //         onClick={(id, e) => this.props.handleDelete(id, e)}>
+    //           {date[i].cancel}</button> </p>
+    //     )
+    //   }
+  

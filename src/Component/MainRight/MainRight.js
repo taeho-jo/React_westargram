@@ -2,6 +2,7 @@ import React from 'react'
 import ItMe from './ItMe'
 import MainStory from './MainStory'
 import EveryOne from './EveryOne'
+import './MainRight.scss'
 
 
 function MainRight() {

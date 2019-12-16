@@ -1,4 +1,5 @@
 import React from 'react';
+import './RightProfile.scss'
 
 function RightProfile(props) {
   return(

@@ -1,5 +1,6 @@
 import React from 'react'
-import LogoText from '../../logo_text.png'
+import LogoText from '../../Image/logo_text.png'
+import './SubNav.scss'
 
 
 function SubNav () {

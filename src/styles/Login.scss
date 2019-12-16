@@ -1,0 +1,191 @@
+.container {
+  width: 100%;
+  height: 725px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainCotainer {
+  width: 350px;
+  height: 380px;
+  background-color: #FFFFFF;
+  border: 1px solid #EFEFEF;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mainCotainer .logo {
+  width: 175px;
+  height: 51px;
+  margin-top: 20px;
+}
+
+.mainCotainer .formBox {
+  width: 348px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formBox input {
+  width: 268px;
+  height: 38px;
+  margin: 3px auto;
+  background-color: #FAFAFA;
+  border: 1px solid #EFEFEF;
+  border-radius: 3px;
+  padding: 10px;
+  color: #999999;
+}
+
+.loginBox button {
+  width: 268px;
+  height: 30px;
+  margin: 10px auto;
+  background-color: #C9E0FB;
+  border: none;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-weight: 800;
+}
+
+.or {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: #999999;
+  font-weight: 700;
+}
+
+.facebook {
+  margin-top: 10px;
+}
+.facebook img {
+  width: 16px;
+  height: 16px;;
+}
+
+.facebook .facebookBtn {
+  background: none;
+  border: none;
+  font-weight: 700;
+}
+
+.facebookBtn a {
+  color: #385185;
+}
+
+.forget {
+  width: 348px;
+  height: 48px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+.forget a {
+  margin-top: 20px;
+  color: #003569;
+}
+
+
+/* 가입하기 시작 */
+
+.noId {
+  width: 350px;
+  height: 48px;
+  margin-top: 10px;
+  background-color: white;
+  border: 1px solid #EFEFEF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.noId .noId1 {
+  font-size: 14px;
+}
+
+.noId a {
+  margin-right: 10px;
+  color: #3897F0;
+  font-weight: 800;
+}
+
+
+/* 다운로드 쪽 */
+
+.downLoad {
+  width: 350px;
+  height: 101px;
+  margin-top:5px;
+}
+
+.downLoad p {
+  padding: 16px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.downLoad .image {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+}
+
+.apple {
+  width: 136px;
+  display: block;
+}
+
+.google {
+  width: 136px;
+  display: block;
+}
+
+.loginBox .btn_blue{
+  background-color: #3897F0;
+}
+.loginBox .loginBtn {
+  background-color: #C9E0FB;
+}
+
+/* footer 가즈아 */
+
+/* footer.bye {
+  width: 100%;
+  height: 38px;
+  text-align: center;
+}
+
+.byeMsg {
+  width: 100%;
+  font-size: 11px;
+  color: #9A9A9A;
+  font-weight: 700;
+}
+
+.bye .info {
+  display: inline-block;
+  text-align: left;
+}
+
+.info li {
+  display: inline;
+  font-size: 12px;
+  margin: 0 12px 3px 0;
+  padding: -5px;
+  list-style: none;
+}
+
+.info a {
+  font-weight: 600;
+  color: #003569;
+} */

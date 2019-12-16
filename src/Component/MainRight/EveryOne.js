@@ -1,5 +1,6 @@
 import React from 'react'
 import RightProfile from './RightProfile'
+import './EveryOne.scss'
 
 
 function EveryOne() {

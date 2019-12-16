@@ -1,0 +1,52 @@
+.RightProfile {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  margin-left: 6px;
+  .Box {
+    display: flex;
+    .Photo {
+      background: 
+       linear-gradient(#ccc,#ccc) padding-box, /*this is your grey background*/
+       linear-gradient(to right, #9c20aa, #fb3570) border-box;
+      color: #313149;
+      border: 2px solid transparent;
+      border-radius:50%;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      .ProfilePhoto {
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        margin-right: 10px;
+        margin-left: 10px;
+        border: 2px solid white;
+      }
+    }
+    .ProfileBox {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+      .RightName {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .RightText {
+        font-size: 10px;
+        color: #DBDBDB;
+        margin-top: 3px;
+        font-weight: normal;
+      }
+    }
+  }
+  .Follow {
+    margin-right: 10px;
+    background: none;
+    border: none;
+    color: #0984e3;
+    font-weight: 600;
+  }
+}
