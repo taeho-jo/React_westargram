@@ -11,7 +11,8 @@ class SubFeedPage extends React.Component {
     this.state = {
       Comment: [ 
         {id:0, who:'jotang' , content:'너무 맛있어보여요ㅠㅠ', cancel: ''}, 
-        {id:1, who:'mino_maru' , content:'혼자만 먹는겁니까 지금', cancel: ''}],
+        {id:1, who:'mino_maru' , content:'혼자만 먹는겁니까 지금', cancel: ''}
+      ],
       Comment1: [
         {id:0, who:'yeon.90' , content:'다음에 또 만들어주세요', cancel: ''},
         {id:1, who:'what._sub' , content:'(끄적끄적)메모...', cancel: ''}
@@ -23,16 +24,11 @@ class SubFeedPage extends React.Component {
       }
     }
 
-    handleDelete = (id, e) => {
+    handleDelete = (data) => {
       const Arr = this.state.Comment;
-      const newArr = Array.from(Arr)  
-      // newArr.findIndex(element => lskdfj)
-      //  e ===={id:0, who:'jotang' , content:'너무 맛있어보여요ㅠㅠ', cancel: ''},
-      const fIndex = (a) => a.id < 10 && a.id > 5  
-      const index = newArr.findIndex(fIndex)
-
-
-      newArr.splice(index,1) 
+      const newArr = Arr.filter(e => (
+        e.id !== data
+      ))
       this.setState({
         Comment: newArr
       })
@@ -56,31 +52,27 @@ class SubFeedPage extends React.Component {
               this.max_Comment_id = this.max_Comment_id + 1;
               let Comments = this.state.Comment.concat(
                 {id: this.max_Comment_id, who: 'wecode_bootcamp', content: name, cancel: 'X'})
-              // this.state.Comment.push(
-              //   {id: this.max_Comment_id, who: 'jotang', content: name})
-              this.setState({Comment: Comments})  //this.state.Comment
+              this.setState({Comment: Comments})
               }}
              handleDelete = {this.handleDelete} 
             />
   
             
-           <SubFeeds
-            username='yoojinkim' 
-            userphoto='https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/72954696_3062594683755547_5762162342318047232_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&oh=20046d40b6baa810f7d8a8f4635a3f11&oe=5EB1E419'
-            mainphoto='https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/75458054_437600753584267_4189244771785573011_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_cat=107&oh=164953b4975a743cdbfe764a65f6fe7e&oe=5E82DF56'
-            otherPhoto='https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/49913192_2237115383217792_4528914117368479744_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&oh=d585c9e799e53f29662309f79a889f7d&oe=5E6BF1FD'
-            otherUser='sooin.ju'
-            num={15}
-            date={this.state.Comment1} 
-            onSubmit={(name, index) => {
-              this.max_Comment_id = this.max_Comment_id + 1;
-              let Comments1 = this.state.Comment1.concat(
-                {id: this.max_Comment_id, who: 'wecode_bootcamp', content: name, cancel: 'X'})
-              // this.state.Comment.push(
-              //   {id: this.max_Comment_id, who: 'jotang', content: name})
-              this.setState({Comment1: Comments1})  //this.state.Comment
-              }}
-              />
+          <SubFeeds
+          username='yoojinkim' 
+          userphoto='https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/72954696_3062594683755547_5762162342318047232_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&oh=20046d40b6baa810f7d8a8f4635a3f11&oe=5EB1E419'
+          mainphoto='https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/75458054_437600753584267_4189244771785573011_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_cat=107&oh=164953b4975a743cdbfe764a65f6fe7e&oe=5E82DF56'
+          otherPhoto='https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/49913192_2237115383217792_4528914117368479744_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&oh=d585c9e799e53f29662309f79a889f7d&oe=5E6BF1FD'
+          otherUser='sooin.ju'
+          num={15}
+          date={this.state.Comment1} 
+          onSubmit={(name, index) => {
+            this.max_Comment_id = this.max_Comment_id + 1;
+            let Comments1 = this.state.Comment1.concat(
+              {id: this.max_Comment_id, who: 'wecode_bootcamp', content: name, cancel: 'X'})
+            this.setState({Comment1: Comments1})
+            }}
+            />
   
           <SubFeeds
             username='donzzangu' 
@@ -94,9 +86,7 @@ class SubFeedPage extends React.Component {
               this.max_Comment_id = this.max_Comment_id + 1;
               let Comments2 = this.state.Comment2.concat(
                 {id: this.max_Comment_id, who: 'wecode_bootcamp', content: name, cancel: 'X'})
-              // this.state.Comment.push(
-              //   {id: this.max_Comment_id, who: 'jotang', content: name})
-              this.setState({Comment2: Comments2})  //this.state.Comment
+              this.setState({Comment2: Comments2})
               }}
               />
         </div> 
@@ -108,25 +98,3 @@ class SubFeedPage extends React.Component {
 
 
 export default SubFeedPage;
-
-
-
-
-// onSubmit={(name) => {
-//   this.max_Comment_id = this.max_Comment_id + 1;
-//   let Comments = this.state.Comment.concat(
-//     {id: this.max_Comment_id, who: 'wecode_bootcamp', content: name, cancel: 'X'})
-//   // this.state.Comment.push(
-//   //   {id: this.max_Comment_id, who: 'jotang', content: name})
-//   this.setState({Comment: Comments})  //this.state.Comment
-//   }}
-
-// onClick={() => {
-//   const newArr = Array.from(this.state.Comment)
-//   console.log(this.state.Comment)
-//   console.log(newArr[0].id)
-//   if(newArr.id === this.state.Comment.id) {
-//     newArr.splice(newArr.id, 1)
-//     // console.log(newArr.splice(newArr.id, 1))
-//   }
-// }} 

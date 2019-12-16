@@ -91,6 +91,7 @@
       font-weight: 600;
       margin-right: 5px;
       background-color:#ffffff;
+      position: relative;
     }
     span{
       font-weight: normal;
@@ -102,17 +103,15 @@
       color: #DBDBDB;
       font-size: 14px;
     }
-    .js-p {
-      position: relative;
-      .del {
-        position: absolute;
-        right: 15px;
-        background: none;
-        font-weight: 900;
-        color: red;
-        border: none;
-      }
+    button {
+      position: absolute;
+      right: 15px;
+      background: none;
+      font-weight: 900;
+      color: red;
+      border: none;
     }
+    
   }
   .time {
     font-size: 12px;

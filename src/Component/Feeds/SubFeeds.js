@@ -7,7 +7,6 @@ class SubFeeds extends React.Component {
   addComment = (e) => {
     e.preventDefault();
     this.props.onSubmit(e.target.title.value);
-    // console.log(e.target.title.value)
     e.target.title.value = '';
   }
 
@@ -15,19 +14,17 @@ class SubFeeds extends React.Component {
 
   render() {
     let date = this.props.date
-    let lists = [];
-
-  //  console.log(date)
-    for(let i = 0; i < date.length; i++) {
-      lists.push(
-        <p key={date[i].id} className="js-p"><a herf={date[i].id}>{date[i].who}</a><span className="js-span"> {date[i].content}</span>
+    let lists = date.map(data => (
+        <p key={data.id} clasName="js-p"><a herf={data.id}>{data.who}</a><span className="js-span"> {data.content}</span>
           <button 
-            value= {date[i].id} 
+            value= {data.id} 
             className='del'
-            onClick={(e) => this.props.handleDelete(e)}>
-              {date[i].cancel}</button> </p>
-        )
-      }
+            onClick={event => this.props.handleDelete(data.id) }>
+              {data.cancel}
+          </button> 
+        </p>
+      
+    ))
   
     return (
       <article className="feed">
@@ -88,38 +85,4 @@ class SubFeeds extends React.Component {
 
 export default SubFeeds;
 
-// <p key={date[i].id} className="js-p"><a herf={date[i].id}>{date[i].who}</a><span className="js-span"> 
-//             {date[i].content}</span>
-//             <button className='del'>{date[i].cancel}</button> </p>
-
-
-// lists.push(
-//   <p 
-//     key={date[i].id} 
-//     className="js-p"><a herf={date[i].id}>{date[i].who}</a>
-//     <span className="js-span"> {date[i].content}</span>
-//     <button 
-//       value='X' 
-//       className='del'
-//       onClick={this.props.handleDelete}
-//       >{date[i].cancel}</button> </p>
-  
-//   )}
-
-
-
-  // let date = this.props.date
-    // let lists = [];
-
-  //  console.log(date)
-    // for(let i = 0; i < date.length; i++) {
-    //   lists.push(
-    //     <p key={date[i].id} className="js-p"><a herf={date[i].id}>{date[i].who}</a><span className="js-span"> {date[i].content}</span>
-    //       <button 
-    //         value= {date[i].id} 
-    //         className='del'
-    //         onClick={(id, e) => this.props.handleDelete(id, e)}>
-    //           {date[i].cancel}</button> </p>
-    //     )
-    //   }
   

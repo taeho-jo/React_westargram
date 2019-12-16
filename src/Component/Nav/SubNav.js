@@ -1,7 +1,7 @@
 import React from 'react'
 import LogoText from '../../Image/logo_text.png'
 import './SubNav.scss'
-
+import { Link } from 'react-router-dom'
 
 function SubNav () {
   return(
@@ -19,7 +19,9 @@ function SubNav () {
         <div className="navIcon">
           <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png" alt="search" />
           <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png" alt="heart" />
-          <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png" alt="mypage" />
+          <Link to='/'>
+            <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png" alt="mypage" />
+          </Link>
         </div> 
     </nav>
   )

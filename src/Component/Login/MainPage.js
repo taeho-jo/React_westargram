@@ -2,6 +2,7 @@ import React from 'react';
 import LogoImage from '../../Image/logo_text.png'
 import Facebook from '../../Image/facebook.png'
 import './Mainpage.scss'
+import { Link } from 'react-router-dom'
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -19,7 +20,9 @@ class MainPage extends React.Component {
       <main className="container">
         <div className="containerBox">     
           <div className="mainCotainer">       
-            <img src={ LogoImage } alt="LOGOIMAGE" className="logo" />
+            <Link to='/MainPage'>
+              <img src={ LogoImage } alt="LOGOIMAGE" className="logo" />
+            </Link>
             <form action="" className="formBox">
               
               <input 
